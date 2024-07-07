@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-framework="javascript">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0  user-scalable=yes">
     <title>Gerenciador de Tarefas</title>
-    <script src="taskManager.js"></script>
+    <script src="script/taskManager.js"></script>
+    <script>
+        window.onload = function(){
+            let hasRegistered = localStorage.getItem('hasRegistered');
+            if(!hasRegistered){
+                window.location.href= "register.html";
+            }
+        };
+        window.onload = renderGreeting();
+    </script>
 </head>
 <body>
     <header>
