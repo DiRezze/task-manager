@@ -36,6 +36,7 @@ function loadTasks(){
         <label>${task.title}</label>
         <button onclick="deleteTask(${task.id})"> X </button>
         `;
+        taskItem.classList.add('task-item')
         if(task.completed){
             taskItem.classList.add('task-completed');
         }

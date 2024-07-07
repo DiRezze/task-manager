@@ -1,3 +1,6 @@
+const usernameInput = document.getElementById('usernameInput');
+let username = usernameInput.value.trim();
+
 function setGreeting(username) {
     let currentHour = new Date().getHours();
     if (currentHour < 12) {
