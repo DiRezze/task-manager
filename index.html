@@ -4,21 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0  user-scalable=yes">
     <title>Gerenciador de Tarefas</title>
-    <script src="script/userPreferences.js"></script>
-    <script src="script/taskManager.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="style.css">    
-    <script>
-            /*
-            window.onload = function(){
-                let hasRegistered = localStorage.getItem('hasRegistered');
-                if(!hasRegistered){
-                    window.location.href= "register.html";
-                }
-            };
-            */
+    <script src="script/userPreferences.js">
         window.onload = renderGreeting();
     </script>
+    <script src="script/taskManager.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/checkboxStyles.css">    
+    <link rel="stylesheet" type="text/css" href="styles/deleteButtonStyles.css">
 </head>
 <body>
     <header class="desktop-header">
@@ -29,14 +22,12 @@
     </header>
     <main class="app-container">
         <h1 class="main-title">Lista de Tarefas:</h1>
-        <input type="text" id="taskTitle-input" class="task-input">
+        <input type="text" id="taskTitle-input" class="task-input" maxlength="46">
         <div class="options-container">
-            <button onclick="deleteAllCompleted()" class="secondary-button">Excluir concluídas</button>
-            <button onclick="addTask()" class="primary-button">Adicionar tarefa</button>
-        </div>  
-        <div class="list-container">
-            <ul id="taskList" class="taskList"></ul>
+            <button onclick="deleteAllCompleted()" class="action-button secondary-button">Excluir concluídas</button>
+            <button onclick="addTask()" class="action-button primary-button">Adicionar tarefa</button>
         </div>
+        <ul id="taskList" class="taskList"></ul>
     </main>
 </body>
 </html>

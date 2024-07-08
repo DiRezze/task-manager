@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+    font-size: 14px;
+    font-family: Calibri;
+    font-weight: 300;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+}
+.desktop-header{
+    height: 3em;
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-items: flex-start   ;
+    box-shadow: hsla(0, 0%, 0%, 0.349) 0px 3px 2px; 
+    background-color: #FBFEFF;
+}
+.app-logo img{
+    padding-top: 0.25em;
+    margin: 0.75em;
+    height: 2em;
+    width: auto;
+}
+.greeting{
+    font-weight: 400;
+    color: #222;
+}
+.app-container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center ;
+    align-items: center;
+    padding-top: 1em;
+}
+.main-title{
+    margin: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+.task-input{
+    border: 1px solid #22222221;
+    box-shadow: hsla(0, 0%, 0%, 0.151) 0px 3px 2px; 
+    border-radius: 3em;
+    height: 2em;
+    width: 30em;
+    text-indent: 1em;
+    object-position: center;
+}
+.options-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 3em;
+    width: 30em;
+    font-weight: 900;    
+}
+.taskList{
+    z-index: 2;
+    padding: 0;
+}
+.task-item{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 1em;
+    background-color: transparent;
+    z-index: 3;
+    min-height: 2.5em;
+    border-radius: 6px;
+    border: 1px solid #22222221;
+    width: 30em;
+    box-shadow: hsla(0, 0%, 0%, 0.151) 0px 3px 2px;
+    list-style: none;
+}
+.toggleTask-button{
+    margin-right: auto;
+}
+.deleteTask-button{
+    margin-left: auto;
+    background-color: transparent;
+}
+.task-completed{
+    text-decoration: line-through;
+    font-style: italic;
+    color: #222;
+}
+
+.action-button{
+    margin: 1em;
+    width: 40%;
+    height: 2.5em;
+    box-shadow: hsla(0, 0%, 0%, 0.151) 0px 3px 2px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border-radius: 3em;
+    font-weight: 700;
+}
+.action-button:active{
+    transform: scale(0.96);
+}
+.action-button:hover{
+    scale: 1.05;
+}
+.primary-button{
+    background-color: #45fcc5;
+    border: 1px solid #22222221;
+    color: white;
+}
+.secondary-button{
+    background-color: #f9f9f9;
+    border: 2px solid #45fcc5;
+    color: #45fcc5;
+}
+
+@media (max-width: 400px) {
+    .greeting{
+        display: none;
+    }
+    
+}
