@@ -16,5 +16,5 @@ function renderGreeting(){
     document.addEventListener('DOMContentLoaded', function(){
         const greetingField = document.getElementById('user-greeting');
         greetingField.innerHTML=`${greeting}`;
-    })
+    });
 }

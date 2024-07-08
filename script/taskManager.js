@@ -23,7 +23,12 @@ function toggleTask(id){
 function deleteTask(id) {
     taskArray = taskArray.filter(task => task.id !== id);
     loadTasks();
-  }
+}
+
+function deleteAllCompleted(){
+    taskArray = taskArray.filter(task=> !task.completed);
+    loadTasks();
+}
 
 function loadTasks(){
     const taskList = document.getElementById('taskList');
