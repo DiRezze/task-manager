@@ -1,7 +1,9 @@
 let taskArray = [];
 
 function addTask(){
+    
     const taskTitle = document.getElementById('taskTitle-input').value.trim();
+
     if (taskTitle !== ''){
         taskArray.push({id:Date.now(), title: taskTitle, completed: false});
         loadTasks();
@@ -10,6 +12,7 @@ function addTask(){
 }
 
 function toggleTask(id){
+
     taskArray = taskArray.map(task=>{
         if (task.id === id){
             task.completed = !task.completed;
@@ -84,9 +87,13 @@ function loadTasks(){
 }
 
 document.addEventListener('DOMContentLoaded', () =>{
+
     document.getElementById('taskTitle-input').addEventListener('keypress', function(e){
+
         if(e.key === 'Enter'){
             addTask();
         }
+
     });
+
 });

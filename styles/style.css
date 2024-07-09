@@ -1,36 +1,39 @@
 body{
     margin: 0;
+    width: 100vw;
     font-size: 14px;
     font-family: Calibri;
     font-weight: 300;
     line-height: 1.5;
     background-color: #f9f9f9;
 }
+body.dark-mode{
+    background-color: #222;
+    color: white;
+}
 .desktop-header{
-    height: 3em;
+    margin: 0;
+    height: 42px;
     width: 100vw;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-items: flex-start   ;
+    justify-items: flex-start;
     box-shadow: hsla(0, 0%, 0%, 0.349) 0px 3px 2px; 
     background-color: #FBFEFF;
 }
 .app-logo img{
     padding-top: 0.25em;
     margin: 0.75em;
-    height: 2em;
-    width: auto;
-}
-.greeting{
-    font-weight: 400;
-    color: #222;
+    height: 28px;
+    width: fit-content;
 }
 .app-container{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center ;
     align-items: center;
+    width: 100vw;
     padding-top: 1em;
 }
 .main-title{
@@ -39,25 +42,26 @@ body{
     text-align: center;
 }
 .task-input{
+    height: 32px;
+    width: 90vw;
+    max-width: 30em;
     border: 1px solid #22222221;
     box-shadow: hsla(0, 0%, 0%, 0.151) 0px 3px 2px; 
     border-radius: 3em;
-    height: 2em;
-    width: 30em;
     text-indent: 1em;
-    object-position: center;
+}
+.task-input:focus{
+    outline-color: #21daa2;
+    outline-style: solid;
+    outline-width: 2px;
 }
 .options-container{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     height: 3em;
-    width: 30em;
-    font-weight: 900;    
-}
-.taskList{
-    z-index: 2;
-    padding: 0;
+    width: 90vw;
+    max-width: 30em;
 }
 .task-item{
     display: flex;
@@ -67,57 +71,58 @@ body{
     padding: 0;
     margin: 1em;
     background-color: transparent;
-    z-index: 3;
     min-height: 2.5em;
+    height: auto;
     border-radius: 6px;
     border: 1px solid #22222221;
-    width: 30em;
+    width: 95vw;
+    max-width: 30em;
     box-shadow: hsla(0, 0%, 0%, 0.151) 0px 3px 2px;
     list-style: none;
-}
-.toggleTask-button{
-    margin-right: auto;
-}
-.deleteTask-button{
-    margin-left: auto;
-    background-color: transparent;
 }
 .task-completed{
     text-decoration: line-through;
     font-style: italic;
-    color: #222;
+    color: #888;
 }
-
 .action-button{
-    margin: 1em;
-    width: 40%;
-    height: 2.5em;
+    margin: 5px;
+    width: 45%;
+    height: 35px;
     box-shadow: hsla(0, 0%, 0%, 0.151) 0px 3px 2px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     border-radius: 3em;
     font-weight: 700;
 }
-.action-button:active{
-    transform: scale(0.96);
-}
-.action-button:hover{
-    scale: 1.05;
-}
+.action-button:active{transform: scale(0.96);}
+.action-button:hover{scale: 1.05;}
 .primary-button{
-    background-color: #45fcc5;
+    background-color: #14ca94;
     border: 1px solid #22222221;
     color: white;
 }
 .secondary-button{
-    background-color: #f9f9f9;
-    border: 2px solid #45fcc5;
-    color: #45fcc5;
+    background-color: transparent;
+    border: 2px solid #21dfa6;
+    color: #21dfa6;
+}
+.toggleTask-button{margin-right: auto;}
+.deleteTask-button{margin-left: auto; background-color: transparent;}
+.toggleTheme-button{
+    margin-left: auto;
+    width: fit-content;
 }
 
-@media (max-width: 400px) {
-    .greeting{
-        display: none;
-    }
-    
+/*Dark Mode styles sets*/
+body.dark-mode .desktop-header{
+    background-color: #111111;
+}
+body.dark-mode .task-input{
+    background-color: #555555;
+    color: white;
+}
+body.dark-mode .task-item{
+    background-color: #333;
+    border: 1px solid #444;
 }

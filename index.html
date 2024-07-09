@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0  user-scalable=yes">
     <title>Gerenciador de Tarefas</title>
-    <script src="script/userPreferences.js">
-        window.onload = renderGreeting();
-    </script>
+    <script src="script/userPreferences.js"></script>
     <script src="script/taskManager.js"></script>
 
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/checkboxStyles.css">    
     <link rel="stylesheet" type="text/css" href="styles/deleteButtonStyles.css">
-
     <link rel="icon" sizes="16x16" href="images/favicon-16x16.png" type="image/png">
     <link rel="icon" sizes="32x32" href="images/favicon-32x32.png" type="image/png">
 
@@ -22,7 +19,7 @@
         <div class="app-logo">
             <img src="images/taskManagerLogo.png" alt="TaskManager Logo">
         </div>
-        <h2 id="user-greeting" class="greeting"></h2>
+        <button id="themeToggleButton" class="action-button secondary-button toggleTheme-button" onclick="toggleTheme()">Mudar tema</button>
     </header>
     <main class="app-container">
         <h1 class="main-title">Lista de Tarefas:</h1>
@@ -31,7 +28,7 @@
             <button onclick="deleteAllCompleted()" class="action-button secondary-button">Excluir concluídas</button>
             <button onclick="addTask()" class="action-button primary-button">Adicionar tarefa</button>
         </div>
-        <ul id="taskList" class="taskList"></ul>
+        <ul id="taskList" style="padding: 0;"></ul>
     </main>
 </body>
 </html>

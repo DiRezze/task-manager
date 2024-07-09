@@ -13,21 +13,11 @@
   position: relative;
   overflow: hidden;
 }
-.deleteButton svg {
-  width: 44%;
-}
-.deleteButton:hover {
-  overflow: visible;
-}
-.bin path {
-  transition: all 0.2s;
-}
-.deleteButton:hover .bin path {
-  fill: #df3e3e;
-}
-.deleteButton:active {
-  transform: scale(0.98);
-}
+.deleteButton svg {width: 44%;}
+.deleteButton:hover {overflow: visible;}
+.bin path {transition: all 0.2s;}
+.deleteButton:hover .bin path {fill: #df3e3e;}
+.deleteButton:active {transform: scale(0.98);}
 .tooltip {
   --tooltip-color: rgb(41, 41, 41);
   position: absolute;
@@ -53,6 +43,4 @@
   background-color: var(--tooltip-color);
   bottom: -10%;
 }
-.deleteButton:hover .tooltip {
-  opacity: 1;
-}
+.deleteButton:hover .tooltip {opacity: 1;}
