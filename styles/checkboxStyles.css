@@ -92,12 +92,3 @@ body.dark-mode .toggleTask-button{
   -o-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
   transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
 }
-
-.toggleTask-button:active:not(:checked)::after {
-  -webkit-transition: none;
-  -o-transition: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  transition: none;
-  opacity: 1;
-}

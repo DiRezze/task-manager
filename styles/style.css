@@ -80,6 +80,10 @@ body.dark-mode{
     box-shadow: hsla(0, 0%, 0%, 0.151) 0px 3px 2px;
     list-style: none;
 }
+.task-list{
+    padding: 0;
+    margin: 0;
+}
 .task-completed{
     text-decoration: line-through;
     font-style: italic;
@@ -107,7 +111,15 @@ body.dark-mode{
     border: 2px solid #21dfa6;
     color: #21dfa6;
 }
-.toggleTask-button{margin-right: auto;}
+.task-item .toggleTask-button{
+    margin-right: auto;
+}
+.task-item .toggleTask-button:checked{
+    background: #14C377;
+    border-color: transparent;
+}
+
+
 .deleteTask-button{margin-left: auto; background-color: transparent;}
 .toggleTheme-button{
     margin-left: auto;

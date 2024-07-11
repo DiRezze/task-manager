@@ -46,6 +46,7 @@ function loadTasks(){
             id="${task.id}"
             onclick="toggleTask(${task.id})"
             class="toggleTask-button"
+            ${task.completed ? 'checked' : ''}
         >
         <label from="${task.id}">${task.title}</label>
         <button
