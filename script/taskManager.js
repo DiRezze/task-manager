@@ -23,6 +23,52 @@ function toggleTask(id){
     loadTasks();
 }
 
+function editTask(id){
+    const taskIndex = taskArray.findIndex(task => task.id === id);
+    if(taskIndex!== -1){
+        const taskElement = document.getElementById(id).closest('li');
+        const taskLabel = document.querySelector('label');
+        const originalLabel = taskLabel.textContent;
+
+        taskElement.innerHTML = `
+        <button onclick="saveEdit(${id})">Salvar</button>
+        <input type="text" id="edit-${id}" value="${originalLabel}" class="edit-input">
+        <button onclick="cancelEdit()">Cancelar</button>
+        `;
+    }
+}
+
+function saveEdit(id){
+    const editInput = document.getElementById(`edit-${id}`);
+    const newLabel = editInput.value.trim();
+
+    if(newLabel !== '' ){
+
+        taskArray = taskArray.map(task=>{
+            if(task.id === id){
+                task.title = newLabel;
+            }
+            return task;
+
+        });
+
+        loadTasks();
+
+    } else{
+        createErrorAlert();
+    }
+
+}
+
+function createErrorAlert(){
+    alert("Você não pode salvar uma tarefa vazia!");
+}
+
+function cancelEdit(){
+    //It will also generates a toast
+    loadTasks();
+}
+
 function deleteTask(id) {
     taskArray = taskArray.filter(task => task.id !== id);
     loadTasks();
@@ -49,6 +95,28 @@ function loadTasks(){
             ${task.completed ? 'checked' : ''}
         >
         <label from="${task.id}">${task.title}</label>
+
+        <div class="button-container">
+
+        <button 
+        class="editButton"
+        onclick="editTask(${task.id})">
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        x="0px" 
+        y="0px" 
+        width="24" 
+        height="24" 
+        viewBox="0 0 24 24"
+        >
+            <path
+            fill="#B5BAC1"
+            d="M 19.171875 2 C 18.448125 2 17.724375 2.275625 17.171875 2.828125 L 16 4 L 20 8 L 21.171875
+             6.828125 C 22.275875 5.724125 22.275875 3.933125 21.171875 2.828125 C 20.619375 2.275625 19.895625
+              2 19.171875 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z">
+            </path>
+        </svg>
+        </button>
         <button
         class="deleteButton deleteTask-button"
         onclick="deleteTask(${task.id})"
@@ -78,6 +146,8 @@ function loadTasks(){
 
             <span class="tooltip">Excluir</span>
         </button>
+
+        </div>
         `;
         taskItem.classList.add('task-item')
         if(task.completed){

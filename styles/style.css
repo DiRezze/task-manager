@@ -118,6 +118,28 @@ body.dark-mode{
     background: #14C377;
     border-color: transparent;
 }
+.task-item .button-container{
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-around;
+    align-items: center;
+}
+.task-item .edit-button{
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
 
 
 .deleteTask-button{margin-left: auto; background-color: transparent;}
