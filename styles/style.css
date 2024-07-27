@@ -6,6 +6,7 @@ body{
     font-weight: 300;
     line-height: 1.5;
     background-color: #f9f9f9;
+    transition: ease 0.2s all;
 }
 body.dark-mode{
     background-color: #222;
@@ -21,6 +22,7 @@ body.dark-mode{
     justify-items: flex-start;
     box-shadow: hsla(0, 0%, 0%, 0.349) 0px 3px 2px; 
     background-color: #FBFEFF;
+    transition: ease 0.2s all;
 }
 .app-logo img{
     padding-top: 0.25em;
@@ -42,6 +44,7 @@ body.dark-mode{
     text-align: center;
 }
 .task-input{
+    transition: ease 0.2s all;
     height: 32px;
     width: 90vw;
     max-width: 30em;
@@ -68,7 +71,6 @@ body.dark-mode{
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 0;
     margin: 1em;
     background-color: transparent;
     min-height: 2.5em;
@@ -79,10 +81,10 @@ body.dark-mode{
     max-width: 30em;
     box-shadow: hsla(0, 0%, 0%, 0.151) 0px 3px 2px;
     list-style: none;
+    transition: ease 0.2s all;
 }
-.task-list{
+.task-list, .task-item{
     padding: 0;
-    margin: 0;
 }
 .task-completed{
     text-decoration: line-through;
@@ -111,25 +113,19 @@ body.dark-mode{
     border: 2px solid #21dfa6;
     color: #21dfa6;
 }
-.task-item .toggleTask-button{
-    margin-right: auto;
+.task-item .toggleTask-button{margin-right: auto;}
+.deleteTask-button{margin-left: auto; background-color: transparent;}
+.toggleTheme-button{
+    margin-left: auto;
+    width: fit-content;
 }
 .task-item .toggleTask-button:checked{
     background: #14C377;
     border-color: transparent;
 }
 
-
-.deleteTask-button{margin-left: auto; background-color: transparent;}
-.toggleTheme-button{
-    margin-left: auto;
-    width: fit-content;
-}
-
 /*Dark Mode styles sets*/
-body.dark-mode .desktop-header{
-    background-color: #111111;
-}
+body.dark-mode .desktop-header{background-color: #111111;}
 body.dark-mode .task-input{
     background-color: #555555;
     color: white;
